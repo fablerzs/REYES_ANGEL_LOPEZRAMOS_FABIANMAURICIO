@@ -14,7 +14,7 @@ public class BaseDatos {
             "CREATE TABLE PACIENTES (ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100), CEDULA VARCHAR(50) NOT NULL, FECHA_INGRESO DATE NOT NULL, DOMICILIO_ID INT NOT NULL);";
 
     private static final String SQL_DROP_CREATE_DOM= " DROP TABLE IF EXISTS; " +
-            "CREATE TABLE DOMICILIO (ID INT AUTO_INCREMENT PRIMARY KEY, CALLE VARCHAR(100) NOT NULL, NUMERO INT NOT NULL, LOCALIDAD VARCHAR(100) NOT NULL, PROVINCIA VARCHAR(100) NOT NULL";
+            "CREATE TABLE DOMICILIO (ID INT AUTO_INCREMENT PRIMARY KEY, CALLE VARCHAR(100) NOT NULL, NUMERO INT NOT NULL, LOCALIDAD VARCHAR(100) NOT NULL, PROVINCIA VARCHAR(100) NOT NULL)";
 
     public static void crearTablas(){
         Connection conexion = null;
@@ -31,6 +31,6 @@ public class BaseDatos {
     }
 
     public static Connection getConnection() throws Exception {
-        return DriverManager.getConnection("jdbc:h2:/practicaExamen", "sa", "sa");
+        return DriverManager.getConnection("jdbc:h2:~/practicaExamen", "sa", "sa");
     }
 }
