@@ -1,29 +1,41 @@
 import DAO.BaseDatos;
+import DAO.OdontologoDAOH2;
 import Modelo.Odontologo;
 import Service.OdontologoService;
-import org.junit.Assert;
-import org.junit.Test;
+import org.apache.log4j.Logger;
 
+
+import java.util.Arrays;
 import java.util.List;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class OdontologoTest {
+    private static final Logger logger= Logger.getLogger(OdontologoTest.class);
 
     @Test
     public void prueba() {
 
+
         BaseDatos.crearTablas();
         Odontologo odontologo1 = new Odontologo("Juan", "Perez");
+        Odontologo odontologo2 = new Odontologo("Roberto", "Juarez");
+        Odontologo odontologo3 = new Odontologo("Adriana", "Ramirez");
 
         OdontologoService odontologoService = new OdontologoService();
 
-        List<Odontologo> listaOdontologos = odontologoService.mostrarOdontologos();
+
+
         odontologoService.agregarOdontologo(odontologo1);
-        for (int i = 0; i < listaOdontologos.size()  ; i++) {
+        odontologoService.agregarOdontologo(odontologo2);
+        odontologoService.agregarOdontologo(odontologo3);
+        logger.info("Odontologs agregados con exito");
 
-            System.out.println(listaOdontologos.get(i).toString());
+        List<Odontologo> listaOdontologos = odontologoService.mostrarOdontologos();
 
-        }
-        Assert.assertNotNull(odontologoService.mostrarOdontologos());
+        System.out.println(Arrays.toString(listaOdontologos.toArray()));
+
+        Assertions.assertNotNull(odontologoService.mostrarOdontologos());
     }
 
 

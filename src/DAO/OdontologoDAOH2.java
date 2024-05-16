@@ -67,7 +67,7 @@ public class OdontologoDAOH2 implements iDao<Odontologo> {
             PreparedStatement psSearch = conexion.prepareStatement(SQL_SEARCH);
             psSearch.execute();
             ResultSet rs = psSearch.getResultSet();
-            logger.info("buscando odontologos");
+            logger.info("mostrando lista de odontologos");
             while(rs.next()){
                 odontologo = new Odontologo(rs.getInt(1),rs.getString(2),rs.getString(3));
                 lista1.add(odontologo);
