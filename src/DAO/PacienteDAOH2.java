@@ -29,7 +29,7 @@ public class PacienteDAOH2 implements iDao<Paciente> {
             psInsert.execute();
             ResultSet rs = psInsert.getGeneratedKeys();
             while (rs.next()){
-                paciente.setId(rs.findColumn(1));
+                paciente.setId(rs.findColumn(String.valueOf(1)));
             }
 
 

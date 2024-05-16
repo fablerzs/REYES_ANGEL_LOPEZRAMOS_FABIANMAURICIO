@@ -10,4 +10,34 @@ public class Odontologo {
         this.nombre = nombre;
         this.apellido = apellido;
     }
+
+    public Odontologo(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Integer getMatricula() {
+        return matricula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setMatricula(Integer matricula) {
+        this.matricula = matricula;
+    }
+
+    @Override
+    public String toString() {
+        return "Odontologo{" +
+                "matricula=" + matricula +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                '}';
+    }
 }
