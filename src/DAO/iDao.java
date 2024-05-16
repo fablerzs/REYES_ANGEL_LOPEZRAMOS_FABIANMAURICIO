@@ -1,0 +1,11 @@
+package DAO;
+
+import java.util.List;
+
+public interface iDao <T>{
+    T guardar(T t);
+    T buscarID(Integer id);
+    void actualizar(T t);
+    void eliminar(Integer id);
+    List<T> buscarTodos();
+}
